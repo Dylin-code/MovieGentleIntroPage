@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MovieGentleman｜Windows 本機影片管理工具</title>
+  <meta name="description" content="MovieGentleman 是一款 Windows 單機版影片管理工具，支援分類、標籤、篩選、評分、自動產生縮圖、AV 女優資料查詢等功能，專為大量影片整理與快速檢索而生。" />
+  <meta name="theme-color" content="#111827"/>
+  <meta property="og:title" content="MovieGentleman｜Windows 本機影片管理工具" />
+  <meta property="og:description" content="分類、標籤、篩選、評分、自動縮圖、女優查詢。離線可用、免雲端、更安心。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <link rel="icon" href="assets/favicon.ico" />
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#9ca3af;--fg:#e5e7eb;--brand:#22d3ee;--accent:#60a5fa}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--fg);}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{opacity:.9}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:rgba(15,23,42,.75);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    .row{display:flex;gap:18px;flex-wrap:wrap}
+    .hero{padding:64px 0 24px}
+    .title{font-size:40px;line-height:1.1;margin:10px 0}
+    .subtitle{color:var(--muted);font-size:18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b1020;font-weight:700}
+    .btn.outline{background:transparent;color:var(--fg);border:1px solid rgba(255,255,255,.2)}
+    .pill{padding:6px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted);font-size:12px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .section{padding:56px 0}
+    .muted{color:var(--muted)}
+    .feature h3{margin:.2rem 0;font-size:18px}
+    .feature p{margin:.2rem 0;color:var(--muted);font-size:14px}
+    .screen{width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .kbd{background:#0b1222;border:1px solid rgba(255,255,255,.15);padding:2px 6px;border-radius:6px}
+    .small{font-size:12px}
+    .badge{background:#0b1222;border:1px solid rgba(255,255,255,.12);padding:4px 8px;border-radius:10px;margin-right:6px}
+    .code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;background:#0b1222;border:1px solid rgba(255,255,255,.12);padding:10px;border-radius:10px}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr}.grid-2{grid-template-columns:1fr}.title{font-size:30px}.hero{padding:40px 0}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MovieGentleman",
+    "description": "Windows 單機版影片管理工具：分類、標籤、篩選、評分、自動縮圖、女優查詢。",
+    "operatingSystem": "Windows 10/11",
+    "applicationCategory": "Multimedia",
+    "offers": {"@type":"Offer","price":"0","priceCurrency":"TWD"}
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container row" style="align-items:center;justify-content:space-between;">
+      <div class="row" style="align-items:center;gap:10px">
+        <img src="assets/logo.svg" alt="MovieGentleman" width="28" height="28"/>
+        <strong>MovieGentleman</strong>
+        <span class="pill">Windows 本機影片管理</span>
+      </div>
+      <nav class="row" style="gap:14px">
+        <a href="#features">功能</a>
+        <a href="#screens">介面</a>
+        <a href="#download">下載</a>
+        <a href="#faq">FAQ</a>
+        <a href="#privacy">隱私</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">單機離線｜不掃描雲端</span>
+      <h1 class="title">把 D 槽交給 <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">MovieGentleman</span></h1>
+      <p class="subtitle">專為「大量影片收藏」打造的管理器。<br/>支援 <strong>分類</strong>、<strong>標籤</strong>、<strong>篩選</strong>、<strong>評分</strong>、<strong>自動縮圖</strong>、以及 <strong>AV 女優資料查詢</strong>，離線可用、速度流暢、安心可靠。</p>
+      <div class="row" style="gap:12px;margin:18px 0 10px">
+        <a class="btn" href="#download">立即下載 Windows 版</a>
+        <a class="btn outline" href="#screens">看看介面</a>
+      </div>
+      <p class="small muted">支援 Windows 10/11．x64．免安裝可攜式（建議放在非系統磁碟）。</p>
+    </section>
+
+    <section id="features" class="section">
+      <h2>重點功能</h2>
+      <div class="grid grid-3" style="margin-top:16px">
+        <div class="card feature">
+          <h3>分類 + 標籤體系</h3>
+          <p>自定義分類、自由貼標，支援多標籤與快速編輯，打造最貼近你的資料庫。</p>
+        </div>
+        <div class="card feature">
+          <h3>強力篩選與排序</h3>
+          <p>以分類、標籤、評分、檔名等條件即時篩選，支援降冪/升冪排序，一秒定位想看的片。</p>
+        </div>
+        <div class="card feature">
+          <h3>評分系統</h3>
+          <p>以 1–10 分精細評分，清楚標記最愛清單；也可依分數快速查找。</p>
+        </div>
+        <div class="card feature">
+          <h3>自動產生縮略圖</h3>
+          <p>批次擷取影片關鍵幀，生成縮圖快取，瀏覽列表更直覺。</p>
+        </div>
+        <div class="card feature">
+          <h3>AV 女優資料查詢</h3>
+          <p>輸入番號或名稱即可查詢，建立演員欄位與索引，檢索更輕鬆。</p>
+        </div>
+        <div class="card feature">
+          <h3>離線、單機、更安心</h3>
+          <p>所有資料皆儲存在本機，無需登入、無雲端同步，隱私不外流。</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px">
+        <strong>小技巧：</strong>
+        <span class="muted">支援滑鼠右鍵快速操作，鍵盤熱鍵如 <span class="kbd">Enter</span> 播放、<span class="kbd">←/→</span> 翻頁、<span class="kbd">1–0</span> 直接評分等。</span>
+      </div>
+    </section>
+
+    <section id="screens" class="section">
+      <h2>介面預覽</h2>
+      <p class="muted">以下為示意圖。你可以在 <code class="code">assets/</code> 資料夾替換成自己的截圖。</p>
+      <div class="grid grid-2" style="margin-top:16px">
+        <img class="screen" src="assets/screenshot-main.jpg" alt="主視窗：列表 + 大圖預覽"/>
+        <img class="screen" src="assets/screenshot-filter.jpg" alt="多條件篩選與標籤"/>
+      </div>
+      <div class="grid grid-2" style="margin-top:16px">
+        <img class="screen" src="assets/screenshot-rating.jpg" alt="評分與排序"/>
+        <img class="screen" src="assets/screenshot-actress.jpg" alt="女優資料快速查詢"/>
+      </div>
+    </section>
+
+    <section id="download" class="section">
+      <div class="row" style="align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <div style="flex:1 1 380px">
+          <h2>下載與安裝</h2>
+          <ol class="muted">
+            <li>下載壓縮包並解壓到你想要的位置（建議非系統磁碟）。</li>
+            <li>執行 <strong>MovieGentleman.exe</strong> 即可開始使用。</li>
+            <li>首次啟動可於「設定」頁指定影片資料夾與播放器（支援 VLC/MPV）。</li>
+          </ol>
+          <div style="margin-top:14px">
+            <a class="btn" href="#">下載 Windows x64（最新版本）</a>
+            <p class="small muted" style="margin-top:8px">檔案校驗：<span class="code">SHA-256 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></p>
+          </div>
+        </div>
+        <div style="flex:1 1 380px" class="card">
+          <h3 style="margin-top:0">系統需求</h3>
+          <ul class="muted">
+            <li>作業系統：Windows 10 / 11（x64）</li>
+            <li>儲存空間：程式 < 200 MB；縮圖與資料庫視影片量而定</li>
+            <li>播放器：建議安裝 VLC Media Player 或 MPV</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="howto" class="section">
+      <h2>三步就上手</h2>
+      <div class="grid grid-3" style="margin-top:16px">
+        <div class="card"><strong>1 / 指定資料夾</strong><p class="muted">在設定中選擇你的影片根目錄，程式會建立索引。</p></div>
+        <div class="card"><strong>2 / 設定分類與標籤</strong><p class="muted">建立常用分類與標籤，之後可批次套用到多部影片。</p></div>
+        <div class="card"><strong>3 / 開始整理</strong><p class="muted">使用篩選 + 評分快速歸檔，縮圖讓你一眼找到重點。</p></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <h2>常見問題（FAQ）</h2>
+      <div class="grid grid-2" style="margin-top:16px">
+        <div class="card">
+          <strong>需要網路嗎？</strong>
+          <p class="muted">不需要。所有功能均可離線使用；女優查詢需要網路時會另外提示。</p>
+        </div>
+        <div class="card">
+          <strong>會蒐集或上傳我的資料嗎？</strong>
+          <p class="muted">不會。MovieGentleman 不會將任何紀錄上傳雲端，資料全部保留在你的電腦。</p>
+        </div>
+        <div class="card">
+          <strong>支援哪些影片格式？</strong>
+          <p class="muted">以系統已安裝解碼器與你選用的播放器為準；一般常見格式均可支援。</p>
+        </div>
+        <div class="card">
+          <strong>可以自訂快捷鍵嗎？</strong>
+          <p class="muted">目前提供常用快捷鍵；後續版本將開放更多自訂選項。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="section">
+      <h2>隱私與版權聲明</h2>
+      <div class="card">
+        <p class="muted">MovieGentleman 僅提供個人檔案整理與索引功能，不包含任何影音內容。請確保你的使用行為遵循所在地之法律與網站使用條款；若涉及第三方資料（如女優資訊），其版權歸屬原始資料提供方。</p>
+      </div>
+    </section>
+
+    <section id="changelog" class="section">
+      <h2>版本更新</h2>
+      <div class="card">
+        <p class="muted">v0.1.0 – 初版釋出：分類／標籤／篩選／評分／自動縮圖／女優查詢。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container row" style="justify-content:space-between;align-items:center">
+      <div>
+        <strong>MovieGentleman</strong> <span class="muted">© <span id="y"></span> All rights reserved.</span>
+      </div>
+      <div class="muted small">聯絡信箱：<a href="mailto:hello@yourdomain.tw">hello@yourdomain.tw</a></div>
+    </div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
